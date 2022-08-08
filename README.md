@@ -1,7 +1,5 @@
 # *DNASCANNER*
 
----
-
 ## About this repository
 This repository was created as a means of source control for @AnanyaAditiSingh's and @0xVolt's implementation of the *DNASCANNER* project.
 
