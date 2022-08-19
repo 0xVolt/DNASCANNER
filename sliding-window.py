@@ -15,7 +15,7 @@ def slidingWindow(seq, windowWidth):
             if seq[j] == 'a':
                 aCount += 1
         A[i] = aCount
-            
+
     return A
 
 # Sample DNA sequence obtained from an online generator
