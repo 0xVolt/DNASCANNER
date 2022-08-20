@@ -70,3 +70,9 @@ body {
         ```python 
         from flask import flask, render_template, url_for
         ```
+  2. Link the stylesheet using
+        ```css
+        <!-- Notice the use of single quotes within the double quotes -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        ```
+###### Note: The same applies if you were trying to link a JavaScript file. It would be `filename='js/main.js'` instead.
