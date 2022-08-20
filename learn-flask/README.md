@@ -17,6 +17,7 @@ Following along with this [tutorial](https://www.youtube.com/watch?v=Z1RJmh_OqeA
 - [ ] Inherit that file in `index.html`.
 - [ ] Make a css folder.
 - [ ] Create a `main.css` file with some basic rule sets.
+- [ ] Link `main.css` to the master html file.
 
 ## Notes
 Use these notes by reading the bit that corresponds to the step you're on in the timeline.
@@ -64,4 +65,8 @@ body {
     font-family: sans-serif;
 }
 ```
-- This stylesheet now needs to be linked in the `base.html` master html file. However, the css file cannot directly be linked as a path. We gotta make use of more Jinja2 syntax.   
+- This stylesheet now needs to be linked in the `base.html` master html file. However, the css file cannot directly be linked as a path. We gotta make use of more Jinja2 syntax. We link the stylesheet by doing the following,
+  1. Importing the function `url_for()` from flask in our `app.py`. Our Flask import then becomes, 
+        ```python 
+        from flask import flask, render_template, url_for
+        ```
