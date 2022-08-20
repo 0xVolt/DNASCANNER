@@ -20,14 +20,14 @@ Following along with this [tutorial](https://www.youtube.com/watch?v=Z1RJmh_OqeA
 - [X] Install dependencies. `pip install flask flask-sqlalchemy` to install flask and it's dependencies in this venv.
 - [X] Create a new file named `app.py` and run it using `py app.py` to deploy the app on your localhost.
 - [X] Create folders named `static` and `templates`.
-- [ ] Create `index.html` inside `templates`.
-- [ ] Now, instead of returning a string in our app, we'll `return render_template(index.html)`.
-- [ ] Create boilerplate html code in `index.html` and refresh the project.
-- [ ] Create a master html file to inherit from. 
-- [ ] Inherit that file in `index.html`.
-- [ ] Make a css folder.
-- [ ] Create a `main.css` file with some basic rule sets.
-- [ ] Link `main.css` to the master html file.
+- [X] Create `index.html` inside `templates`.
+- [X] Now, instead of returning a string in our app, we'll `return render_template(index.html)`.
+- [X] Create boilerplate html code in `index.html` and refresh the project.
+- [X] Create a master html file to inherit from. 
+- [X] Inherit that file in `index.html`.
+- [X] Make a css folder.
+- [X] Create a `main.css` file with some basic rule sets.
+- [X] Link `main.css` to the master html file.
 
 ## 1.3. Notes
 Use these notes by reading the bit that corresponds to the step you're on in the checklist.
