@@ -1,7 +1,17 @@
-# Learn Flask
+# 1. Learn Flask
 Following along with this [tutorial](https://www.youtube.com/watch?v=Z1RJmh_OqeA) on YouTube, this log file was created to document progress on learning the Flask framework for backend web development in Python. 
 
-## Timeline
+## 1.1. Table of Contents
+- [1. Learn Flask](#1-learn-flask)
+  - [1.1. Table of Contents](#11-table-of-contents)
+  - [1.2. Checklist](#12-checklist)
+  - [1.3. Notes](#13-notes)
+    - [1.3.1. Virtual Environments](#131-virtual-environments)
+    - [1.3.2. Substituting the string for an html page](#132-substituting-the-string-for-an-html-page)
+    - [1.3.3. Template Inheritance](#133-template-inheritance)
+    - [1.3.4. Static content](#134-static-content)
+
+## 1.2. Checklist
 - [X] Create a new directory to house the project.
 - [X] `cd` into the project dir.
 - [X] Type `virtualenv env` into the terminal to create a new virtual environment with the name `env`. This name can be anything but `env` is the convention. You should now see a new folder with the name you'd specified.
@@ -19,20 +29,20 @@ Following along with this [tutorial](https://www.youtube.com/watch?v=Z1RJmh_OqeA
 - [ ] Create a `main.css` file with some basic rule sets.
 - [ ] Link `main.css` to the master html file.
 
-## Notes
-Use these notes by reading the bit that corresponds to the step you're on in the timeline.
-### Virtual Environments
+## 1.3. Notes
+Use these notes by reading the bit that corresponds to the step you're on in the checklist.
+### 1.3.1. Virtual Environments
 - All the packages needed for the project are located within this directory which makes the project more portable in a collaborative setting.
 - Requirements are installed into the working directory directly.
 - Virtual environments are the standard when it comes to collaborative projects due to the easy package management. 
 
-### Substituting the string for an html page
+### 1.3.2. Substituting the string for an html page
 - Two folders needed to be created. One named static and the other, templates. 
 - In the templates folder, we create a file named `index.html`. 
 - By creating this file, we can now return a render of the html file it in our app when defining the route.
 - When specifying the name of the file to render, we need not specify the full path since Flask knows to look in the templates folder.
 
-### Template Inheritance
+### 1.3.3. Template Inheritance
 - This is achieved by creating a master html page that is inherited into every other page so as to cut redundant code.
 - For this, create a new file in templates named `base.html`. This will be our skeleton. 
 - In this page, use Jinja2 syntax to create a block like so.
@@ -56,7 +66,7 @@ Use these notes by reading the bit that corresponds to the step you're on in the
     {% endblock %}
 ```
 
-### Static content
+### 1.3.4. Static content
 - In the static folder, make a new folder named css and create a file named `main.css`.
 - Put some basic rule sets in the `main.css` file for example,
 ```css
@@ -75,4 +85,4 @@ body {
         <!-- Notice the use of single quotes within the double quotes -->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
         ```
-###### Note: The same applies if you were trying to link a JavaScript file. It would be `filename='js/main.js'` instead.
+- The same applies if you were trying to link a JavaScript file. It would be `filename='js/main.js'` instead.
