@@ -1,5 +1,5 @@
 /* Getting rid of the margin and setting the font family */
 body {
     margin: 0;
-    font-family: monospace;
+    font-family: sans-serif;
 }
