@@ -44,7 +44,11 @@ Following along with this [tutorial](https://www.youtube.com/watch?v=Z1RJmh_OqeA
 - [X] Link `main.css` to the master html file.
 
 **Adding database functionality**
-- [ ] Import `sqlalchemy`
+- [X] Import `sqlalchemy`
+- [X] Configure sqlite database
+- [X] Initialise database
+- [X] Create a database model using a class
+- [X] Ensure that an `__repr__` string is implemented through the class
 
 ---
 
