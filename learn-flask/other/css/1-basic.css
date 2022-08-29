@@ -1,0 +1,11 @@
+/* Getting rid of the margin and setting the font family */
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Configuring table display */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
