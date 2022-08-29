@@ -61,6 +61,23 @@ def delete(id):
         return redirect('/')
     except:
         return 'There was an issue deleting that task.'
+    
+
+# Functionality to update tasks
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    taskToUpdate = Model.query.get_or_404(id)
+    
+    if request.method == 'POST':
+        taskToUpdate.content = request.form['content']
+        
+        try:
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'There was an issue updating that task.'
+    else:
+        return render_template('update.html', task=taskToUpdate)    
 
 
 if __name__ == '__main__':
