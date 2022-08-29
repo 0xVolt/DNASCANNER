@@ -61,7 +61,7 @@ def delete(id):
         return redirect('/')
     except:
         return 'There was an issue deleting that task.'
-    
+
 
 # Functionality to update tasks
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
