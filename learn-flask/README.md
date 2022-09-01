@@ -1,5 +1,5 @@
 # Learn Flask
-Following along with this [tutorial](https://www.youtube.com/watch?v=Z1RJmh_OqeA) on YouTube, this log file was created to document progress on learning the Flask framework for backend web development in Python.
+Following along with this [tutorial](https://www.youtube.com/watch?v=Z1RJmh_OqeA) on YouTube, this log file was created to document progress on learning the Flask framework for backend web development in Python. In addition, I find myself referring to the [official Flask documentation](https://flask.palletsprojects.com/en/2.2.x/) time and time again. To get started with Flask as soon as possible, the [quick start](https://flask.palletsprojects.com/en/2.2.x/quickstart/) page is as descriptive as it can be for a mere introduction to this micro-framework.
 
 ## 1. Table of Contents
 - [Learn Flask](#learn-flask)
@@ -45,7 +45,7 @@ Following along with this [tutorial](https://www.youtube.com/watch?v=Z1RJmh_OqeA
 - [X] Create boilerplate html code in `index.html` and refresh the project.
 
 **Using template inheritance**
-- [X] Create a master html file to inherit from. 
+- [X] Create a master html file to inherit from.
 - [X] Inherit that file in `index.html`.
 
 **Adding css**
@@ -85,25 +85,25 @@ Use these notes by reading the bit that corresponds to the step you're on in the
 ### 3.1. Virtual Environments
 - All the packages needed for the project are located within this directory which makes the project more portable in a collaborative setting.
 - Requirements are installed into the working directory directly.
-- Virtual environments are the standard when it comes to collaborative projects due to the easy package management. 
+- Virtual environments are the standard when it comes to collaborative projects due to the easy package management.
 
 ### 3.2. Substituting the string for an html page
-- Two folders needed to be created. One named static and the other, templates. 
-- In the templates folder, we create a file named `index.html`. 
+- Two folders needed to be created. One named static and the other, templates.
+- In the templates folder, we create a file named `index.html`.
 - By creating this file, we can now return a render of the html file it in our app when defining the route.
 - When specifying the name of the file to render, we need not specify the full path since Flask knows to look in the templates folder.
 
 ### 3.3. Template Inheritance
 - This is achieved by creating a master html page that is inherited into every other page so as to cut redundant code.
-- For this, create a new file in templates named `base.html`. This will be our skeleton. 
+- For this, create a new file in templates named `base.html`. This will be our skeleton.
 - In this page, use Jinja2 syntax to create a block like so.
 ```html
     {% block head/body %}
     {% endblock %}
 ```
-- Jinja2 is the template engine that Flask uses. We create a block in the code that we'll utilise to insert our code into on all the other pages when we inherit this template. 
+- Jinja2 is the template engine that Flask uses. We create a block in the code that we'll utilise to insert our code into on all the other pages when we inherit this template.
 - The `base.html` file uses one block for the head and another for the body.
-- Now, to inherit `base.html`, change `index.html` to be, 
+- Now, to inherit `base.html`, change `index.html` to be,
 ```html
     <!-- Inherit from base.html -->
     {% extends 'base.html' %}
@@ -127,8 +127,8 @@ Use these notes by reading the bit that corresponds to the step you're on in the
     }
     ```
 - This stylesheet now needs to be linked in the `base.html` master html file. However, the css file cannot directly be linked as a path. We gotta make use of more Jinja2 syntax. We link the stylesheet by doing the following,
-    1. **Note: `url_for` no longer needs to be imported from Flask to be able to link the `main.css` file. It just becomes redundant.** For academic purposes, importing the function `url_for()` from flask in our `app.py` looks like, 
-        ```python 
+    1. **Note: `url_for` no longer needs to be imported from Flask to be able to link the `main.css` file. It just becomes redundant.** For academic purposes, importing the function `url_for()` from flask in our `app.py` looks like,
+        ```python
         from flask import flask, render_template, url_for
         ```
     2. Link the stylesheet using
@@ -136,7 +136,7 @@ Use these notes by reading the bit that corresponds to the step you're on in the
         <!-- Notice the use of single quotes within the double quotes -->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
         ```
-    When using `{{}}`, this makes sure that the return type of the arguments is a string. This is why it's used to slot in the path of a file in string form. 
+    When using `{{}}`, this makes sure that the return type of the arguments is a string. This is why it's used to slot in the path of a file in string form.
 - The same applies if you were trying to link a JavaScript file. It would be `filename='js/main.js'` instead.
 
 ### 3.5. Database connectivity
@@ -166,7 +166,7 @@ Use these notes by reading the bit that corresponds to the step you're on in the
         date_created = db.Column(db.DateTime, default=datetime.utcnow)
     ```
 - Each field of the class is a new attribute in the database.
-- Importing datetime looks like, 
+- Importing datetime looks like,
 
     ```py
     from datetime import datetime
@@ -177,7 +177,7 @@ Use these notes by reading the bit that corresponds to the step you're on in the
     # Creating a repr function to represent each task (object) as a string
     def __repr__(self):
         retString = 'Task #{}'.format(self.id)
-        
+
         return retString
     ```
 - In Python, `__repr__` is a special method used to represent a class’s objects as a string. `__repr__` is called by the repr() built-in function. You can define your own string representation of your class objects using the `__repr__` method.
@@ -186,19 +186,19 @@ Use these notes by reading the bit that corresponds to the step you're on in the
 ### 3.7. Creating the database
 - Head to the terminal. Make sure your env is activated.
 - Start an interactive Python shell. Type in `python` or `py` to start up an interpreter prompt.
-- To create the database, type in, 
-```py
-1. from app import db
-2. db.create_all()
-```
-- The python script needs to be named `app.py` since we've initialised using the scripts name. 
+- To create the database, type in,
+    ```py
+    1. from app import db
+    2. db.create_all()
+    ```
+- The python script needs to be named `app.py` since we've initialised using the scripts name.
 - On running the second command, a new `__pycache__` folder will be created along with our database element.
 - You no longer need the terminal since the database has been setup following the above steps.
 
 ## 4. Creating the Task Master app
 ### 4.1. Creating the basic layout
 - Write a new `index.html` file with a header and a table.
-- This is the basic structure of the table we're creating. 
+- This is the basic structure of the table we're creating.
     ```html
     <div class="content">
         <h1>Task Master</h1>
@@ -248,7 +248,7 @@ Use these notes by reading the bit that corresponds to the step you're on in the
         <input type="submit" value="Add task">
     </form>
     ```
-- For now, the second row of the table isn't updated dynamically. That's going to change soon. 
+- For now, the second row of the table isn't updated dynamically. That's going to change soon.
 - Editing the `app.py` script, we add the logic to push data to our database. We first import `requests` from Flask.
 - The import statement changes to,
     ```py
@@ -287,7 +287,7 @@ Use these notes by reading the bit that corresponds to the step you're on in the
         # Look familiar? This code pushes data to our database
         db.session.add(newTask)
         db.session.commit()
-        
+
         # Remember to import redirect back to the index page
         return redirect('/')
     except:
@@ -304,7 +304,7 @@ Use these notes by reading the bit that corresponds to the step you're on in the
     else:
         # This looks at all the database contents and returns them in the order of their creation
         tasks = Model.query.order_by(Model.dateCreated).all()
-        
+
         # Passing the tasks variable into the render_template() function
         return render_template('index.html', tasks=tasks)
     ```
@@ -318,16 +318,16 @@ Use these notes by reading the bit that corresponds to the step you're on in the
 if request.method == 'POST':
     # Pass in the id of the input to extract
     taskContent = request.form['content']
-    
+
     # Create an object of the table having content as the extracted content above
     newTask = Model(content=taskContent)
-    
+
     # Pushing the new task created to the database
     try:
         # Look familiar? This code pushes data to our database
         db.session.add(newTask)
         db.session.commit()
-        
+
         # Remember to import redirect back to the index page
         return redirect('/')
     except:
@@ -337,13 +337,13 @@ else:
     # This looks at all the database contents and returns them in the order of their creation
     tasks = Model.query.order_by(Model.dateCreated).all()
     # tasks = Model.query.order_by(Model.dateCreated).first()
-    
+
     # Passing the tasks variable into the render_template() function
     return render_template('index.html', tasks=tasks)
 ```
 
 ### 4.3. Making the table update dynamically
-- Adding Jinja2 syntax to our table in `index.html` to show a row for each task in the database. We use a for loop to iterate through the tasks in the task list. This task list comes from the above code passing `tasks` to `render_template()`. 
+- Adding Jinja2 syntax to our table in `index.html` to show a row for each task in the database. We use a for loop to iterate through the tasks in the task list. This task list comes from the above code passing `tasks` to `render_template()`.
 
 - The updated row dynamically becomes,
     ```html
@@ -364,9 +364,9 @@ else:
     {% endfor %}
     ```
 - It was at this point that the `task.content` field refers to the `name` of the input and not the `id`.
- 
+
 ### 4.4. Adding functionality to delete tasks
-- We query the database on the `id` field and not the name field like we did before. This is because the `id` field is our primary key. 
+- We query the database on the `id` field and not the name field like we did before. This is because the `id` field is our primary key.
 - We set the routes for these pages to be dynamic according to the `id` of the task.
 - The route then becomes,
     ```py
@@ -378,11 +378,11 @@ else:
     def delete(id):
         # More on this after
         taskToDelete = Model.query.get_or_404(id)
-        
+
         try:
             db.session.delete(taskToDelete)
             db.session.commit()
-            
+
             return redirect('/')
         except:
             return 'There was an issue deleting that task.'
@@ -408,12 +408,12 @@ else:
         def update(id):
             # Querying for the task to update
             taskToUpdate = Model.query.get_or_404(id)
-            
+
             # If a response was logged from the form
             if request.method == 'POST':
                 # Extract from the form
                 taskToUpdate.content = request.form['content']
-                
+
                 # Edit database
                 try:
                     db.session.commit()
@@ -442,7 +442,7 @@ else:
             <input type="submit" value="Update">
         </form>
     </div>
-    {% endblock %}   
+    {% endblock %}
     ```
 
 **That wraps up the documentation for this extremely short and simple project in flask.**
