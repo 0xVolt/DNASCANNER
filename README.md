@@ -11,9 +11,9 @@ This repository was created as a means of source control for the *DNASCANNER* pr
 - Output from [`main.ipynb`](2-using-fasta-files/main.ipynb) are stored in json format in [`output.json`](2-using-fasta-files/output.json).
 
 ### Version 1 - August 2022
-- We started by writing a python script named [`sliding-window.py`](1-proof-of-concept\sliding-window.py) to illustrate the sliding window technique in Python.
-- We then scaled this up to the [`main.ipynb`](1-proof-of-concept\main.ipynb) handling a much larger sequence of DNA that we generated using an online tool. This sequence is stored in the text file [`dna.txt`](1-proof-of-concept\dna.txt) and is imported as and when required.
-- In addition, the data structure that stores all of the data pertaining to the nucleotides is written to the [`output.json`](1-proof-of-concept\output.json) for future reference.
+- We started by writing a python script named [`sliding-window.py`](1-proof-of-concept/sliding-window.py) to illustrate the sliding window technique in Python.
+- We then scaled this up to the [`main.ipynb`](1-proof-of-concept/main.ipynb) handling a much larger sequence of DNA that we generated using an online tool. This sequence is stored in the text file [`dna.txt`](1-proof-of-concept/dna.txt) and is imported as and when required.
+- In addition, the data structure that stores all of the data pertaining to the nucleotides is written to the [`output.json`](1-proof-of-concept/output.json) for future reference.
 
 ## [Documentation](https://docs.google.com/document/d/1FSGJLPnqawFmHsPHzkaaJ6Ot7dEjJXHIUfWuVUgztYc/edit?usp=sharing)
 The docs for this project can be found on a google doc [here](https://docs.google.com/document/d/1FSGJLPnqawFmHsPHzkaaJ6Ot7dEjJXHIUfWuVUgztYc/edit?usp=sharing). This daily log includes an agenda, code snippets and screenshots with an explanation of every block of code.
